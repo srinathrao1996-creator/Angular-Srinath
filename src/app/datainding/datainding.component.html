@@ -1,0 +1,11 @@
+<div class="circle-calculator">
+  <h2>Circle Calculator</h2>
+
+  <label><b>Radius:</b></label><br>
+  <input type="number" [(ngModel)]="radius" placeholder="Enter radius" /><br><br>
+
+  <button (click)="calculate()">Calculate</button><br><br>
+
+  <h4>Area: {{ areaResult }}</h4>
+  <h4>Perimeter: {{ perimeterResult }}</h4>
+</div>

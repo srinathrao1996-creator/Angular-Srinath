@@ -1,0 +1,41 @@
+<!-- <h1>Data Binding</h1> -->
+<!-- Event Binding -->
+ <button (click)="greeting()"> Click Here</button>
+
+ <input type="text" placeholder="enter name" (keyup)="typing ()"><br>
+
+ <select (change)="fruits()">
+    <option >Apple</option>
+    <option >Banana</option>
+    <option >Strawberry</option>
+    <option >Mango</option>
+    <option >Kiwi</option>
+    <option >Cherry</option>
+ </select>
+
+ <!-- Property Binding -->
+  <button [disabled]="isDataPresent">reset</button>
+  <img [src]="image_url" alt=""><br>
+
+  <!-- Interpolation Binding -->
+   <h2>{{name}}</h2>
+   <h3>{{age}}</h3>
+
+   <!-- Two way data biniding -->
+
+   <input type="text" [(ngModel)]="mobile" (keyup)="enternumber()">
+
+   <!-- All Binding Usage in below calculator -->
+    
+   <div class="databinding">
+   <h1>Calculator</h1>
+   <h5>{{result}}</h5>
+   <label> Number 1 : </label><br>
+   <input type="number" [(ngModel)]="num1" placeholder="enter number 1" ><br>
+   <label> Number 2 : </label><br>
+   <input type="number" [(ngModel)]="num2" placeholder="enter number 2"><br>
+   <button (click)="addition()" [disabled]="!num1 || !num2">Add</button>
+   <button (click)="subtraction()" [disabled]="!num1 || !num2">Sub</button>
+   <button (click)="multiplication()" [disabled]="!num1 || !num2">Mul</button>
+   <button (click)="division()" [disabled]="!num1 || !num2">Div</button>
+   </div>

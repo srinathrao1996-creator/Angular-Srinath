@@ -1,0 +1,9 @@
+<div class="rectangle">
+   <h1>Rectangle</h1><br>
+   <label> <b>Length :</b> </label><br>
+   <input type="number" [(ngModel)]="height" placeholder="enter height" ><br>
+   <label> <b>Breadth :</b> </label><br>
+   <input type="number" [(ngModel)]="weight" placeholder="enter weight"><br><br>
+   <button (click)="calculatorbmi()" >Calculator BMI</button><br>
+    <h5>{{result}}</h5>
+   </div>
