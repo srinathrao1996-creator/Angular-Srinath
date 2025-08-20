@@ -13,6 +13,7 @@ import { CircleComponent } from './circle/circle.component';
 import { BmiComponent } from './bmi/bmi.component';
 import { DirectivesComponent } from './directives/directives.component';
 import { EmployeeComponent } from './employee/employee.component';
+import { ProductComponent } from './product/product.component';
 
 const routes: Routes = [
   {path:'login',component:LoginComponent}, // Parent
@@ -26,6 +27,7 @@ const routes: Routes = [
    {path:'bmi',component:BmiComponent},
    {path:'directives',component:DirectivesComponent},
    {path:'employee',component:EmployeeComponent},
+   {path:'product',component:ProductComponent},
   ]},
 
   {path:'',component:DashboardComponent}, // Default

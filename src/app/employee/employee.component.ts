@@ -28,8 +28,57 @@ this.employees.splice(index,1);
 
 }
 
+// ( We using filter process )
+
 sort(){
   this.employees.sort((a:any,b:any)=>a.package-b.package);
+}
+
+// ( We using filter process )
+
+roleFilter:string='';
+filter(){
+  this.employees=this.employees.filter((employee:any)=>employee.role==this.roleFilter);
+}
+
+name:string=''
+nameFilter(){
+  console.log(this.name);
+  this.employees=this.employees.filter((employee:any)=>employee.name.includes(this.name));
+}
+
+// ( We using map process )
+
+bonus(){
+  this.employees=this.employees.map((employee:any)=>{
+    employee.package=employee.package+30000;
+    return employee;
+  })
+}
+
+// ( We using reduce process )
+
+costToCompany(){
+  var totalCost=this.employees.reduce((sum:any,employee:any)=>sum+employee.package,0);
+  alert(totalCost);
+}
+
+// ( for add record in webpage by using unshift method )
+
+empName:String='';
+experience:number=0;
+package:number=0;
+role:string='';
+
+addRecord(){
+  // console.log(this.name,this.experience,this.package,this.role)
+  var user={
+    name:this.empName,
+    experience:this.experience,
+    package:this.package,
+    role:this.role,
+  }
+  this.employees.unshift(user);
 }
 
 }
