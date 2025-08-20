@@ -14,6 +14,7 @@ import { BmiComponent } from './bmi/bmi.component';
 import { DirectivesComponent } from './directives/directives.component';
 import { EmployeeComponent } from './employee/employee.component';
 import { ProductComponent } from './product/product.component';
+import { VehiclesComponent } from './vehicles/vehicles.component';
 
 const routes: Routes = [
   {path:'login',component:LoginComponent}, // Parent
@@ -28,6 +29,7 @@ const routes: Routes = [
    {path:'directives',component:DirectivesComponent},
    {path:'employee',component:EmployeeComponent},
    {path:'product',component:ProductComponent},
+   {path:'vehicles',component:VehiclesComponent},
   ]},
 
   {path:'',component:DashboardComponent}, // Default
