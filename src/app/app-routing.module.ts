@@ -15,6 +15,8 @@ import { DirectivesComponent } from './directives/directives.component';
 import { EmployeeComponent } from './employee/employee.component';
 import { ProductComponent } from './product/product.component';
 import { VehiclesComponent } from './vehicles/vehicles.component';
+import { MailComponent } from './mail/mail.component';
+import { FlipkartComponent } from './flipkart/flipkart.component';
 
 const routes: Routes = [
   {path:'login',component:LoginComponent}, // Parent
@@ -30,6 +32,8 @@ const routes: Routes = [
    {path:'employee',component:EmployeeComponent},
    {path:'product',component:ProductComponent},
    {path:'vehicles',component:VehiclesComponent},
+   {path:'mail',component:MailComponent},
+   {path:'flipkart',component:FlipkartComponent},
   ]},
 
   {path:'',component:DashboardComponent}, // Default
