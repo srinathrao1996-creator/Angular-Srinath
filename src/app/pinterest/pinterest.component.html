@@ -1,0 +1,11 @@
+<div class="parent">
+    <div class="card" *ngFor="let Pinterest of pinterest">
+        <div class="image-wrapper">
+        <img src={{Pinterest.download_url}}>
+        <div class="overlay">
+            <div class="author-name">{{Pinterest.author}}</div>
+            <a [href]="Pinterest.download_url"target="_blank" rel="noopener noreferrer">Download</a>      
+            </div>
+        </div>
+    </div>
+</div>

@@ -34,10 +34,14 @@ getfilteredVehicles(term:any):Observable<any>{
 
  // For delete any details from API
 
- // For getting pagination details from API
-
  deleteVehicles(id:any):Observable<any>{
   return this._httpClient.delete('https://6128991386a213001729f9df.mockapi.io/test/v1/jurisdiction/'+id)
+}
+
+ // For create any details from API
+
+  createVehicles(data:any):Observable<any>{
+  return this._httpClient.post('https://6128991386a213001729f9df.mockapi.io/test/v1/jurisdiction/',data)
 }
 
 }

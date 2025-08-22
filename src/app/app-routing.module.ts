@@ -17,6 +17,9 @@ import { ProductComponent } from './product/product.component';
 import { VehiclesComponent } from './vehicles/vehicles.component';
 import { MailComponent } from './mail/mail.component';
 import { FlipkartComponent } from './flipkart/flipkart.component';
+import { PinterestComponent } from './pinterest/pinterest.component';
+import { WeatherComponent } from './weather/weather.component';
+import { CreatevehicleComponent } from './createvehicle/createvehicle.component';
 
 const routes: Routes = [
   {path:'login',component:LoginComponent}, // Parent
@@ -34,6 +37,9 @@ const routes: Routes = [
    {path:'vehicles',component:VehiclesComponent},
    {path:'mail',component:MailComponent},
    {path:'flipkart',component:FlipkartComponent},
+   {path:'pinterest',component:PinterestComponent},
+   {path:'weather',component:WeatherComponent},
+   {path:'createvehicle',component:CreatevehicleComponent},
   ]},
 
   {path:'',component:DashboardComponent}, // Default
