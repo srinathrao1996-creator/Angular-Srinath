@@ -27,6 +27,19 @@ import { FlipkartComponent } from './flipkart/flipkart.component';
 import { PinterestComponent } from './pinterest/pinterest.component';
 import { WeatherComponent } from './weather/weather.component';
 import { CreatevehicleComponent } from './createvehicle/createvehicle.component';
+import { IdcardComponent } from './idcard/idcard.component';
+import { AccountdetailsComponent } from './accountdetails/accountdetails.component';
+import { CreateUserComponent } from './create-user/create-user.component';
+import { CreateAccountDetailsComponent } from './create-account-details/create-account-details.component';
+import { VehicleDetailsComponent } from './vehicle-details/vehicle-details.component';
+import { CreateIdcardComponent } from './create-idcard/create-idcard.component';
+import { ViewIdcardDetailsComponent } from './view-idcard-details/view-idcard-details.component';
+import { SiblingComponent } from './sibling/sibling.component';
+import { Sibling2Component } from './sibling2/sibling2.component';
+import { ParentComponent } from './parent/parent.component';
+import { ChildComponent } from './child/child.component';
+import { RatingChildComponent } from './rating-child/rating-child.component';
+import { AboutUsModule } from './about-us/about-us.module';
 
 @NgModule({
   declarations: [
@@ -52,14 +65,27 @@ import { CreatevehicleComponent } from './createvehicle/createvehicle.component'
     FlipkartComponent,
     PinterestComponent,
     WeatherComponent,
-    CreatevehicleComponent
+    CreatevehicleComponent,
+    IdcardComponent,
+    AccountdetailsComponent,
+    CreateUserComponent,
+    CreateAccountDetailsComponent,
+    VehicleDetailsComponent,
+    CreateIdcardComponent,
+    ViewIdcardDetailsComponent,
+    SiblingComponent,
+    Sibling2Component,
+    ParentComponent,
+    ChildComponent,
+    RatingChildComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AboutUsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,1 +1,19 @@
-<p>weather works!</p>
+<div class="parent">
+    <div class="card" *ngIf="weathers && weathers.latitude"> 
+        <h1>Weather in Hyderabad</h1><br>
+        <div class="sundiv"></div><br>
+            <!-- <p>{{weathers.latitude}}</p> -->
+            <h1 style="color: rgb(247, 155, 19);">{{weathers.longitude}} &deg; C</h1>
+            <!-- <p> Wind Spped : {{weathers.generationtime_ms}} Km/h</p>
+            <p>{{weathers.utc_offset_seconds}}</p>
+            <p>{{weathers.timezone}}</p>
+            <p>{{weathers.timezone_abbreviation}}</p> -->
+            <h3>Wind Spped :  {{weathers.elevation}} Km/h</h3><br>
+            <!-- <p>{{weathers.current_weathers_units}}</p>
+            <p>{{weathers.interval}}</p>
+            <p>{{weathers.temperature}}</p>
+            <p>{{weathers.windspeed}}</p>
+            <p>{{weathers.winddirection}}</p>
+            <p>{{weathers.weathercode}}</p> -->
+    </div>
+</div>

@@ -1,0 +1,35 @@
+<div class="parent" >
+    <div class="card">
+
+        <div class="front">
+            <div class="top">
+                <div class="topleft">
+                    <img src="{{ idCard.school_logo}}" style="height:70%;width:90%;">
+                </div>
+
+                <div class="topright">
+                    <b><h4>{{idCard.school_name}}</h4></b>
+                    <h6>{{idCard.school_city}}</h6>
+                    <h6>{{idCard.school_pin}}</h6>
+                </div>
+            </div>
+        </div>
+
+        <div class="back">
+            <div class="mid">
+                <div class="midleft">
+                    <h1 style="color: red;">ID : {{idCard.id}}</h1>
+                    <h5>Name : {{idCard.name}}</h5>
+                    <h5>DOB : {{idCard.dob}}</h5>
+                    <h5>Phone :{{idCard.phone}}</h5>
+                    <h5>City : {{idCard.city}}</h5>
+                    <h5>EMail ID : {{idCard.email}}</h5>
+                </div>
+                <div class="midright">
+                    <img src="{{ idCard.profile_picture}}">
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

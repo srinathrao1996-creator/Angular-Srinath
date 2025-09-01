@@ -1,0 +1,96 @@
+<div class="topheading">
+<h1 style="background-color:  rgb(191, 105, 105);;">Student ID Card Details</h1>
+</div>
+<div class="topLabel">
+  <!--  Filter -->
+  <div class="filter">
+  <b><Label>Search : &nbsp;</Label></b>
+<input type="text" [(ngModel)]="searchKeyword" (keyup)="search()" style="width:180px; height:30px; border:0; border-radius: 2px;">
+</div>
+
+<!-- Sorted -->
+  <div class="sorted">
+
+<select [(ngModel)]="coloumnName" style="width:150px; height:30px; border:0; border-radius: 2px;">
+  <option value="school_name"> School Name</option>
+  <option value="school_city">School City</option>
+  <option value="name">Student Name</option>
+  <option value="phone">Student Phone</option>
+</select> &nbsp; <!-- Space -->
+
+<select [(ngModel)]="sortOrder" style="width:150px; height:30px; border:0; border-radius: 2px;">
+  <option value="asc"> Ascending Order</option>
+  <option value="desc">Descending Order</option>
+</select> &nbsp; <!-- Space -->
+
+<button class="btn btn-warning" style="height:30px;width:50px;" (click)="sort()">Sort</button>
+</div>
+
+<!-- Pagination -->
+  <div class="pagination">
+
+<select [(ngModel)]="totalCard" style="width:50px; height:28px; border:0; border-radius:2px;">
+  <option value="5">5</option>
+  <option value="10">10</option>
+  <option value="15">15</option>
+  <option value="20">20</option>
+</select> &nbsp; <!-- Space -->
+
+<select [(ngModel)]="totalpage" style="width:50px; height:28px; border:0; border-radius:2px;">
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+  <option value="5">5</option>
+</select> &nbsp; <!-- Space -->
+
+<button class="btn btn-warning" style="height:30px;width:100px;" (click)="pagination()">Pagination</button> &nbsp; &nbsp; <!-- Space -->
+
+<!-- Create -->
+
+<button class="btn btn-info" style="height:30px;width:100px;" (click)="create()">Create</button>
+
+</div>
+
+</div>
+
+<div class="parent">
+    <div class="card" *ngFor="let idCard of idcard" >
+
+        <div class="top">
+
+            <div class="topleft">
+            <img src="{{ idCard.school_logo}}" style="height:60px;width:90%;">
+            </div>
+
+            <div class="topright">
+            <b><h6 style="color: red;">{{idCard.school_name}}</h6></b>
+            <p>{{idCard.school_city}}</p>
+            <p style="color: rgb(71, 208, 181)">{{idCard.school_pin}}</p>
+            </div>
+
+        </div>
+
+        <div class="mid">
+            <div class="midleft">
+            <p>Name : {{idCard.name}}</p>
+            <p>ID : {{idCard.id}}</p>
+            <p>DOB : {{idCard.dob}}</p>
+            <p>Phone :{{idCard.phone}}</p>
+            <p>City : {{idCard.city}}</p>
+            <p>EMail ID : {{idCard.email}}</p>
+            </div>
+
+            <div class="midright">
+                <img src="{{ idCard.profile_picture}}">
+            </div>
+        </div>
+        
+
+        <div class="bottom">
+            <button class="btn btn-info" routerLink="/dashboard/view-idcard-details/{{idCard.id}}" style="height:30px;width:20%;">View</button>
+            <button class="btn btn-primary" routerLink="/dashboard/edit-idcard-details/{{idCard.id}}"style="height:30px;width:20%;">Edit</button>  
+            <button class="btn btn-danger" (click)="delete(idCard.id)" style="height:30px;width:25%;">Delete</button><!-- (click)="delete(idCard.id)" -->
+        </div>
+    </div>
+</div>

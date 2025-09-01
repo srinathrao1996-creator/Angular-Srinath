@@ -2,7 +2,10 @@
     <div class="card" *ngFor="let Flipkart of flipkart" >
         <div class="image">
                     <img src="{{ Flipkart.image}}">
-                    <div class="rating"> 4.2 <i style="color: rgb(43, 179, 232);" class="bi bi-star-fill"></i>/ 58.4k </div>
+                    <div class="rating">
+                        <app-rating-child [rating]="Flipkart.rating.rate"></app-rating-child>
+                    <!-- {{Flipkart.rating.rate}} / {{Flipkart.rating.count}} -->
+                </div>
                 </div>
             <H4>{{ Flipkart.category}}</H4>
             <H6 style="color: rgb(2, 73, 165);">{{ Flipkart.title}}</H6>

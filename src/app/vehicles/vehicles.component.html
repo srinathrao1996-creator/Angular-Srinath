@@ -42,6 +42,10 @@
 
 <button class="btn btn-warning" (click)="pagination()">Pagination</button>
 
+<!-- Create Process -->
+
+<button class="btn btn-info" (click)="create()">Create</button>
+
 <table class="table table-dark">
   <thead>
     <tr>
@@ -55,7 +59,7 @@
       <th>Cost</th>
       <th>Tyres</th>
       <th>ID</th>
-      <th>Action</th>   <!-- For delete action -->
+      <th colspan="3">Action</th>   <!-- For delete action, For view action, For edit action -->
     </tr>
   </thead>
   <tbody>
@@ -72,6 +76,14 @@
       <td>{{ vehicle.id }}</td>
       <td>
         <button class="btn btn-danger" (click)="delete(vehicle.id)">Delete</button>
+      </td>
+             <!--for View Process -->
+        <td>
+        <button class="btn btn-warning" routerLink="/dashboard/vehicle-details//{{vehicle.id}}">View</button>
+      </td>
+      <!-- for Edit Process -->
+      <td>
+        <button class="btn btn-info" routerLink="/dashboard/edit-details//{{vehicle.id}}">Edit</button>
       </td>
     </tr>
   </tbody>

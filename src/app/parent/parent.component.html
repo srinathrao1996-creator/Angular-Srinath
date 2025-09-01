@@ -1,0 +1,21 @@
+<p>parent works!</p><br>
+
+<!-- Parent to child ( Static Base ) -->
+
+
+<!-- <app-child [count]="358"></app-child> -->
+
+
+
+<!-- Child to parent ( Static Base )-->
+
+
+<!-- <app-child [count]="358" (countEvent)="count($event)"></app-child> -->
+
+
+<!-- Parent to child ( Dynamic Base )-->
+
+<input type="number" [(ngModel)]="parent">
+<h3>{{child}}</h3>
+<app-child [num1]="parent" (numEvent)="catch($event)"></app-child>
+

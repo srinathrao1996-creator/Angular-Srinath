@@ -1,0 +1,30 @@
+<h1 *ngIf="!id">Create ID Card</h1>
+<h1 *ngIf="id">Edit ID Card</h1>
+
+<!-- <h1>{{id ? 'Edit Vehicle' : 'Create Vehicle'}}</h1>  Ternary Operators -->
+
+<Form [formGroup]="createidCardForm">
+    <label >Student Name</label>
+    <input type="text" formControlName="name"><br>
+     <label >Student Phone</label>
+    <input type="text" formControlName="phone"><br>
+     <label >Student City</label>
+    <input type="text" formControlName="city"><br>
+     <label >Student dob</label>
+    <input type="date" formControlName="dob"><br>
+     <label >Student Image</label>
+    <input type="text" formControlName="profile_picture"><br>
+     <label >Student Email</label>
+    <input type="email" formControlName="email"><br>
+     <label >School Logo</label>
+    <input type="text" formControlName="school_logo"><br>
+    <label >School Name</label>
+    <input type="text" formControlName="school_name"><br>
+    <label >School  City</label>
+    <input type="text" formControlName="school_city"><br>
+    <label >School Pincode</label>
+    <input type="text" formControlName="school_pin"><br>
+
+    <button class="btn btn-warning" (click)="submit()">Submit</button>
+    
+</Form>

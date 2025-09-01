@@ -1,0 +1,73 @@
+<H1>Account Details</H1>
+
+<input type="text" [(ngModel)]="searchKeyword" (keyup)="search()">
+
+<select [(ngModel)]="coloumnName">
+  <option value="account_name"> Account Name</option>
+  <option value="available_balance">Available Balance</option>
+  <option value="account_number">Account Number</option>
+  <option value="city">City</option>
+  <option value="ifsc_code">IFSC Code</option>
+  <option value="id">ID</option>
+</select>
+
+<select [(ngModel)]="orderName" >
+    <option value="asc">Ascending order</option>
+    <option value="desc">Descending order</option>
+</select>
+
+<button class="btn btn-info" (click)="sort()">Sorting</button>
+
+<!-- Vehicle Pagination -->
+
+<select [(ngModel)]="items">
+  <option value="5">5</option>
+  <option value="10">10</option>
+  <option value="15">15</option>
+  <option value="20">20</option>
+</select>
+
+<select [(ngModel)]="pageNumber">
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+  <option value="5">5</option>
+</select>
+
+
+<button class="btn btn-warning" (click)="pagination()">Pagination</button>
+
+<!-- Create Account Details -->
+
+<button class="btn btn-info" (click)="create()">Create</button>
+
+<Table class="table table-dark">
+  <thead>
+    <tr>
+      <th>S No</th>
+      <th>Account Name</th>
+      <th>Available Balance</th>
+      <th>Account Number</th>
+      <th>City</th>
+      <th>Profile Picture</th>
+      <th>IFSC Code</th>
+      <th>ID</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let Accountdetails of accountDetails let i=index">
+      <td>{{i+1}}</td>
+      <td>{{ Accountdetails.account_name}}</td>
+      <td>{{ Accountdetails.available_balance}}</td>
+      <td>{{ Accountdetails.account_number}}</td>
+      <td>{{ Accountdetails.city}}</td>
+      <td><img src="{{ Accountdetails.profie_picture}}" style="width: 75px; height: 75px;"></td>
+      <td>{{ Accountdetails.ifsc_code}}</td>
+      <td>{{ Accountdetails.id}}</td>
+      <td><button class="btn btn-danger" (click)="delete(Accountdetails.id)">Delete</button></td> <!-- Vehicle Pagination -->
+    </tr>
+  </tbody>
+</Table>
+
