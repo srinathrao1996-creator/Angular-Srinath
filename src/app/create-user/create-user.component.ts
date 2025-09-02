@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
+import { appleMail } from '../about-us/validators';
 
 @Component({
   selector: 'app-create-user',
@@ -10,18 +11,18 @@ export class CreateUserComponent {
 public userform:FormGroup=new FormGroup({
 // Form Validator
   name:new FormControl('',[Validators.required,Validators.minLength(6),Validators.maxLength(10)]),
-  email:new FormControl(),
-  password:new FormControl(),
-  mobile:new FormControl(),
+  email:new FormControl('',[Validators.required,appleMail]),
+  password:new FormControl('',[Validators.required]),
+  mobile:new FormControl('',[Validators.required]),
   address:new FormGroup({
-  city:new FormControl(),
-  state:new FormControl(),
-  pincode:new FormControl(),
+  city:new FormControl('',[Validators.required]),
+  state:new FormControl('',[Validators.required]),
+  pincode:new FormControl('',[Validators.required]),
   }),
 
   // Dynamic Form
   
-  type:new FormControl(),
+  type:new FormControl([Validators.required]),
   // busFee:new FormControl(), --- To display in static
   // hostelFee:new FormControl(), --- To display in static
   cards:new FormArray([])

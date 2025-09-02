@@ -21,7 +21,7 @@ import { DirectivesComponent } from './directives/directives.component';
 import { EmployeeComponent } from './employee/employee.component';
 import { ProductComponent } from './product/product.component';
 import { VehiclesComponent } from './vehicles/vehicles.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { MailComponent } from './mail/mail.component';
 import { FlipkartComponent } from './flipkart/flipkart.component';
 import { PinterestComponent } from './pinterest/pinterest.component';
@@ -40,6 +40,9 @@ import { ParentComponent } from './parent/parent.component';
 import { ChildComponent } from './child/child.component';
 import { RatingChildComponent } from './rating-child/rating-child.component';
 import { AboutUsModule } from './about-us/about-us.module';
+import { CapitalCreateDirective } from './capital-create.directive';
+import { RupeePipe } from './rupee.pipe';
+import { TokenInterceptor } from './token.interceptor';
 
 @NgModule({
   declarations: [
@@ -78,6 +81,8 @@ import { AboutUsModule } from './about-us/about-us.module';
     ParentComponent,
     ChildComponent,
     RatingChildComponent,
+    CapitalCreateDirective,
+    RupeePipe,
   ],
   imports: [
     BrowserModule,
@@ -87,7 +92,13 @@ import { AboutUsModule } from './about-us/about-us.module';
     ReactiveFormsModule,
     AboutUsModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide:HTTP_INTERCEPTORS,
+      useClass:TokenInterceptor,
+      multi:true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
