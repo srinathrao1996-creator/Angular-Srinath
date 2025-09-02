@@ -11,6 +11,10 @@
     
         <label>Email:</label>
     <input type="email" formControlName="email"><br>
+    <div *ngIf="userform.get('email')?.touched && userform.get('email')?.invalid">
+      <p *ngIf="userform.get('email')?.errors?.['required']">Name is required</p>
+      <p *ngIf="userform.get('email')?.errors?.['appleMail']">Please Use Apple Mail</p>
+    </div>
         <label>Password:</label>
     <input type="password" formControlName="password"><br>
         <label>Mobile:</label>
@@ -64,5 +68,5 @@
             </div>
 
         </div>
-    <button (click)="submit()" class="btn btn-success">Submit</button>
+    <button (click)="submit()" [disabled]="!userform.valid" class="btn btn-success">Submit</button>
 </form>
