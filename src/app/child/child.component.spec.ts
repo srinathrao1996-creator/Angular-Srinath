@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { ChildComponent } from './child.component';
+import { FormsModule } from '@angular/forms';
+import { ParentComponent } from '../parent/parent.component';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 describe('ChildComponent', () => {
   let component: ChildComponent;
@@ -8,7 +10,9 @@ describe('ChildComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ChildComponent ]
+      declarations: [ ParentComponent,ChildComponent ],
+      imports:[FormsModule],
+      schemas:[CUSTOM_ELEMENTS_SCHEMA]
     })
     .compileComponents();
 

@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
+  import { Component } from '@angular/core';
 import { VehiclesService } from '../vehicles.service';
 import { Route, Router } from '@angular/router';
+import { FormControl } from '@angular/forms';
+import { debounceTime, switchMap } from 'rxjs';
 
 @Component({
   selector: 'app-vehicles',
@@ -30,10 +32,27 @@ export class VehiclesComponent {
 
   // For getting filtered details from API
 
-  searchKeyword: string = '';
+  // searchKeyword: string = '';
+  // search() {
+  //   // alert(this.searchKeyword); // For Checking Purpose
+  //   this._vehicleServices.getfilteredVehicles(this.searchKeyword).subscribe(
+  //     (data: any) => {
+  //       console.log(data); // For Checking in console
+  //       this.vehicles = data;
+  //     }, (err: any) => {
+  //       alert("Internal Server Error")
+  //     }
+  //   )
+  // }
+
+
+   // For getting filtered details from API from search optimization
+
+  searchKeyword= new FormControl();
   search() {
-    // alert(this.searchKeyword); // For Checking Purpose
-    this._vehicleServices.getfilteredVehicles(this.searchKeyword).subscribe(
+    this.searchKeyword.valueChanges.pipe(
+      debounceTime(400),
+      switchMap((Search)=>this._vehicleServices.getfilteredVehicles(Search))).subscribe(
       (data: any) => {
         console.log(data); // For Checking in console
         this.vehicles = data;
@@ -42,6 +61,7 @@ export class VehiclesComponent {
       }
     )
   }
+
 
   // For getting sorted details from API
 

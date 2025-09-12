@@ -2,7 +2,11 @@
 
 <!-- Vehicle Filter -->
 
-<input type="text" [(ngModel)]="searchKeyword" (keyup)="search()">
+<!-- <input type="text" [(ngModel)]="searchKeyword" (keyup)="search()"> -->
+
+<!-- Vehicle Filter Search Oprimization-->
+
+<input type="text" [formControl]="searchKeyword" (keyup)="search()">
 
 
 <!-- Vehicle Sorted -->

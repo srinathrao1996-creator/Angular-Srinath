@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { IdcardComponent } from './idcard.component';
+import { IdcardService } from '../idcard.service';
+import { FormsModule } from '@angular/forms';
 
 describe('IdcardComponent', () => {
   let component: IdcardComponent;
@@ -8,7 +10,9 @@ describe('IdcardComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ IdcardComponent ]
+      declarations: [ IdcardComponent ],
+       imports: [HttpClientTestingModule,FormsModule],  
+    providers: [IdcardService],  
     })
     .compileComponents();
 

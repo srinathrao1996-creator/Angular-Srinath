@@ -43,6 +43,12 @@ import { AboutUsModule } from './about-us/about-us.module';
 import { CapitalCreateDirective } from './capital-create.directive';
 import { RupeePipe } from './rupee.pipe';
 import { TokenInterceptor } from './token.interceptor';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AngularMaterialComponent } from './angular-material/angular-material.component';
+import { StoreModule } from '@ngrx/store';
+import { counterReducer } from './store/counter.action.ts/counter.reducer';
+import { UserComponent } from './user/user.component';
+import { AdminComponent } from './admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -83,6 +89,9 @@ import { TokenInterceptor } from './token.interceptor';
     RatingChildComponent,
     CapitalCreateDirective,
     RupeePipe,
+    AngularMaterialComponent,
+    UserComponent,
+    AdminComponent,
   ],
   imports: [
     BrowserModule,
@@ -90,7 +99,9 @@ import { TokenInterceptor } from './token.interceptor';
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
-    AboutUsModule
+    AboutUsModule,
+    BrowserAnimationsModule,
+    StoreModule.forRoot({count:counterReducer}, {})
   ],
   providers: [
     {

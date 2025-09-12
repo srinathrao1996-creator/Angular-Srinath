@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CreateAccountDetailsComponent } from './create-account-details.component';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { AccountdetailsService } from '../accountdetails.service';
 
 describe('CreateAccountDetailsComponent', () => {
   let component: CreateAccountDetailsComponent;
@@ -8,7 +10,9 @@ describe('CreateAccountDetailsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CreateAccountDetailsComponent ]
+      declarations: [ CreateAccountDetailsComponent ],
+      imports: [HttpClientTestingModule], // ✅ Required to inject HttpClient
+      providers: [AccountdetailsService]  // Optional if providedIn: 'root'
     })
     .compileComponents();
 

@@ -30,6 +30,7 @@ import { ViewIdcardDetailsComponent } from './view-idcard-details/view-idcard-de
 import { AuthenticationGuard } from './authentication.guard';
 import { SiblingComponent } from './sibling/sibling.component';
 import { ParentComponent } from './parent/parent.component';
+import { AngularMaterialComponent } from './angular-material/angular-material.component';
 
 const routes: Routes = [
   {path:'login',component:LoginComponent}, // Parent
@@ -64,6 +65,7 @@ const routes: Routes = [
    {path:'payments',
     loadChildren:()=>import('./payments/payments.module')
     .then(m=>m.PaymentsModule)},
+    {path:'angular-material',component:AngularMaterialComponent},
   ]},
 
   {path:'',component:DashboardComponent}, // Default
